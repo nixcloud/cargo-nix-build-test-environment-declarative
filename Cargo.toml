@@ -1,0 +1,7 @@
+[package]
+name = "cargo-nix-build-test-environment"
+#edition = "2024"
+version = "0.1.0"
+
+[dependencies]
+termcolor = "1.4.1"
