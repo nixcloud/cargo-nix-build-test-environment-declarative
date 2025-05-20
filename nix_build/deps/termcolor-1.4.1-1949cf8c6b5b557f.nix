@@ -1,7 +1,7 @@
 { pkgs, stdenv, rustc, cargo }:
 
 pkgs.stdenv.mkDerivation {
-  name = "termcolor-1_4_1";
+  name = "termcolor-1.4.1-1949cf8c6b5b557f";
   phases = "unpackPhase buildPhase installPhase";
 
   src = pkgs.fetchurl {
@@ -9,10 +9,7 @@ pkgs.stdenv.mkDerivation {
     sha256 = "be55cf8942feac5c765c2c993422806843c9a9a45d4d5c407ad6dd2ea95eb9b6";
   };
 
-  #CARGO="/home/nixos/cargo/target/debug/cargo";
   CARGO_CRATE_NAME = "termcolor";
-  #CARGO_MANIFEST_DIR = "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/termcolor-1.4.1";
-  #CARGO_MANIFEST_PATH = "/home/nixos/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/termcolor-1.4.1/Cargo.toml";
   CARGO_PKG_AUTHORS = "'Andrew Gallant <jamslam@gmail.com>'";
   CARGO_PKG_DESCRIPTION = "'A simple cross platform library for writing colored text to a terminal.'";
   CARGO_PKG_HOMEPAGE = "https://github.com/BurntSushi/termcolor";
@@ -27,13 +24,10 @@ pkgs.stdenv.mkDerivation {
   CARGO_PKG_VERSION_MINOR = "4";
   CARGO_PKG_VERSION_PATCH = "1";
   CARGO_PKG_VERSION_PRE = "";
-  #LD_LIBRARY_PATH = "/home/nixos/cargo-nix-build-test-environment/target/debug/deps";
 
   unpackPhase = ''
     tar xf $src
     cd termcolor-1.2.0
-    #${cargo}/bin/cargo --version
-    #${rustc}/bin/rustc --version
   '';
 
   buildPhase = ''
@@ -57,10 +51,7 @@ pkgs.stdenv.mkDerivation {
     mkdir -p $out
     cp -R out/* $out
   '';
-
-  
 }
-
 
 # CARGO=/home/nixos/cargo/target/debug/cargo 
 # CARGO_CRATE_NAME=termcolor 

@@ -2,7 +2,9 @@
 
 this repo is used to create a 'light-weight nix abstraction template' based on the build steps created from `cargo build -vv`.
 
-this will then be enhanced further to 
+
+
+a few helpful commands to understand the inner workings of cargo
 
     cargo tree --all-targets
     cargo test --unit-graph -Z unstable-options
@@ -11,6 +13,13 @@ this will then be enhanced further to
 see: https://lastlog.de/blog/timeline.html?filter=series::libnix
 
 # how to use
+
+## with cargo
+
+    cargo build
+    cargo run
+
+## with nix-build
 
 Development environment:
 

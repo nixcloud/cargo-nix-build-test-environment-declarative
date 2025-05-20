@@ -1,6 +1,6 @@
 let
   pkgs = import <nixpkgs> { };
-  termcolor = pkgs.callPackage ./dep/termcolor.nix { inherit pkgs; };
+  termcolor = pkgs.callPackage ./deps/termcolor-1.4.1-1949cf8c6b5b557f.nix { inherit pkgs; };
 in
 
 pkgs.stdenv.mkDerivation {
@@ -14,8 +14,6 @@ pkgs.stdenv.mkDerivation {
   CARGO = "/home/nixos/cargo/target/debug/cargo";
   CARGO_BIN_NAME = "cargo-nix-build-test-environment";
   CARGO_CRATE_NAME = "cargo_nix_build_test_environment";
-  #CARGO_MANIFEST_DIR="/home/nixos/cargo-nix-build-test-environment"
-  #CARGO_MANIFEST_PATH="/home/nixos/cargo-nix-build-test-environment/Cargo.toml"
   CARGO_PKG_AUTHORS = "";
   CARGO_PKG_DESCRIPTION = "";
   CARGO_PKG_HOMEPAGE = "";
@@ -32,7 +30,6 @@ pkgs.stdenv.mkDerivation {
   CARGO_PKG_VERSION_PRE = "";
   CARGO_PRIMARY_PACKAGE = "1";
   CARGO_SBOM_PATH = "";
-  # LD_LIBRARY_PATH="/home/nixos/cargo-nix-build-test-environment/target/debug/deps"
 
   buildPhase = ''
     OUT_DIR=$(mktemp -d)
