@@ -6,7 +6,11 @@ pkgs.stdenv.mkDerivation {
 
   buildInputs = [ termcolor-1_4_1 ];
 
-  src = ./..;
+  src = builtins.filterSource
+    (path: type:
+      let base = baseNameOf path;
+      in !(base == "target" || base == "result" || builtins.match "result-*" base != null))
+    ./..;
 
   CARGO = "/home/nixos/cargo/target/debug/cargo";
   CARGO_BIN_NAME = "cargo-nix-build-test-environment";
